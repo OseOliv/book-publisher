@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @montagem %>
+
+<div>
+  <%= link_to "Edit this montagem", edit_montagem_path(@montagem) %> |
+  <%= link_to "Back to montagems", montagems_path %>
+
+  <%= button_to "Destroy this montagem", @montagem, method: :delete %>
+</div>

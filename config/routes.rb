@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :montagems
   resources :pecas
   resources :fornecedors
   resources :livros
