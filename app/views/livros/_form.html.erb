@@ -1,32 +1,32 @@
-<%= form_with(model: livro) do |form| %>
+<%= form_with(model: livro, local: true) do |form| %>
   <% if livro.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(livro.errors.count, "error") %> prohibited this livro from being saved:</h2>
 
       <ul>
-        <% livro.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% livro.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :titulo, style: "display: block" %>
+  <div class="field">
+    <%= form.label :titulo %>
     <%= form.text_field :titulo %>
   </div>
 
-  <div>
-    <%= form.label :isbn, style: "display: block" %>
+  <div class="field">
+    <%= form.label :isbn %>
     <%= form.text_field :isbn %>
   </div>
 
-  <div>
-    <%= form.label :autor_id, style: "display: block" %>
-    <%= form.text_field :autor_id %>
+  <div class="field">
+    <%= form.label :autor_id, "Autor" %>
+    <%= form.collection_select :autor_id, Autor.all, :id, :nome, prompt: "Selecione um autor" %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
