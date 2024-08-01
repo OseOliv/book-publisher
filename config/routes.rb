@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pecas
   resources :fornecedors
   resources :livros
   resources :autors
