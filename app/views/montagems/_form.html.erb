@@ -1,22 +1,22 @@
-<%= form_with(model: montagem) do |form| %>
+<%= form_with(model: montagem, local: true) do |form| %>
   <% if montagem.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(montagem.errors.count, "error") %> prohibited this montagem from being saved:</h2>
 
       <ul>
-        <% montagem.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% montagem.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :livro_id, style: "display: block" %>
-    <%= form.text_field :livro_id %>
+  <div class="field">
+    <%= form.label :livro_id, "Livro" %>
+    <%= form.collection_select :livro_id, Livro.all, :id, :titulo, prompt: "Selecione um livro" %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
