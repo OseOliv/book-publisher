@@ -49,14 +49,18 @@ class AutorsController < ApplicationController
 
   # DELETE /autors/1 or /autors/1.json
   def destroy
-    @autor.destroy!
+    @autor = Autor.find(params[:id])
 
-    respond_to do |format|
-      format.html { redirect_to autors_url, notice: "Autor was successfully destroyed." }
-      format.json { head :no_content }
+    if @autor.livros.any?
+      redirect_to autors_url, alert: "Não é possível excluir o autor porque ele ainda está associado a livros."
+    else
+      @autor.destroy
+      respond_to do |format|
+        format.html { redirect_to autors_url, notice: "Autor was successfully destroyed." }
+        format.json { head :no_content }
+      end
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_autor

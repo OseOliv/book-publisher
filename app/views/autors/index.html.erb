@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Autors</h1>
+<h1>Autores</h1>
 
 <div id="autors">
   <% @autors.each do |autor| %>
     <%= render autor %>
     <p>
-      <%= link_to "Show this autor", autor %>
+      <%= link_to "Detalhes", autor %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New autor", new_autor_path %>
+<%= link_to "Criar", new_autor_path %>

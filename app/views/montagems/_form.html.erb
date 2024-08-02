@@ -1,7 +1,7 @@
 <%= form_with(model: montagem, local: true) do |form| %>
   <% if montagem.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(montagem.errors.count, "error") %> prohibited this montagem from being saved:</h2>
+      <h2><%= pluralize(montagem.errors.count, "error") %> proibiu que este pecado fosse salvo</h2>
 
       <ul>
         <% montagem.errors.full_messages.each do |message| %>
@@ -17,6 +17,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Enviar' %>
   </div>
 <% end %>

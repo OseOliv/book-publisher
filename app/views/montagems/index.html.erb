@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Montagems</h1>
+<h1>Montagens</h1>
 
 <div id="montagems">
   <% @montagems.each do |montagem| %>
     <%= render montagem %>
     <p>
-      <%= link_to "Show this montagem", montagem %>
+      <%= link_to "Detalhes", montagem %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New montagem", new_montagem_path %>
+<%= link_to "Nova Montagem", new_montagem_path %>

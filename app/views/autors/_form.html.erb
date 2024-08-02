@@ -1,7 +1,7 @@
 <%= form_with(model: autor) do |form| %>
   <% if autor.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(autor.errors.count, "error") %> prohibited this autor from being saved:</h2>
+      <h2><%= pluralize(autor.errors.count, "error") %> proibiu que este autor fosse salvo:</h2>
 
       <ul>
         <% autor.errors.each do |error| %>
@@ -17,11 +17,11 @@
   </div>
 
   <div>
-    <%= form.label :cpf, style: "display: block" %>
+    <%= form.label :cpf, style: "display: block; text-transform: uppercase" %>
     <%= form.text_field :cpf %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Criar' %>
   </div>
 <% end %>

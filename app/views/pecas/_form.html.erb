@@ -1,7 +1,7 @@
 <%= form_with(model: peca) do |form| %>
   <% if peca.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(peca.errors.count, "error") %> prohibited this peca from being saved:</h2>
+      <h2><%= pluralize(peca.errors.count, "error") %> proibiu que este pecado fosse salvo:</h2>
 
       <ul>
         <% peca.errors.each do |error| %>
@@ -23,10 +23,10 @@
 
   <div>
     <%= form.label :fornecedor_id, style: "display: block" %>
-    <%= form.collection_select :fornecedor_id, Fornecedor.all, :conta, :nome, prompt: "Selecione um fornecedor"  %>
+    <%= form.collection_select :fornecedor_id, Fornecedor.all, :id, :nome, prompt: "Selecione um fornecedor"  %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Criar' %>
   </div>
 <% end %>

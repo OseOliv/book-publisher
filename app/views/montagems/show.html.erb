@@ -3,8 +3,8 @@
 <%= render @montagem %>
 
 <div>
-  <%= link_to "Edit this montagem", edit_montagem_path(@montagem) %> |
-  <%= link_to "Back to montagems", montagems_path %>
+  <%= link_to "Editar", edit_montagem_path(@montagem) %> |
+  <%= link_to "Voltar", montagems_path %>
 
-  <%= button_to "Destroy this montagem", @montagem, method: :delete %>
+  <%= button_to "Deletar Montagem", @montagem, method: :delete, data: {turbo_confirm: "Tem certeza que deseja deletar essa montagem?"}%>
 </div>

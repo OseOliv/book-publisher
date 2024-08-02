@@ -49,11 +49,19 @@ class FornecedorsController < ApplicationController
 
   # DELETE /fornecedors/1 or /fornecedors/1.json
   def destroy
-    @fornecedor.destroy!
+    @fornecedor = Fornecedor.find(params[:id])
 
-    respond_to do |format|
-      format.html { redirect_to fornecedors_url, notice: "Fornecedor was successfully destroyed." }
-      format.json { head :no_content }
+    if @fornecedor.pecas.any?
+      respond_to do |format|
+        format.html { redirect_to fornecedors_url, alert: "Não é possível excluir o fornecedor porque ele está associado a peças." }
+        format.json { head :unprocessable_entity }
+      end
+    else
+      @fornecedor.destroy
+      respond_to do |format|
+        format.html { redirect_to fornecedors_url, notice: "Fornecedor was successfully destroyed." }
+        format.json { head :no_content }
+      end
     end
   end
 
