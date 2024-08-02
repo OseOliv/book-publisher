@@ -3,8 +3,9 @@
 <%= render @fornecedor %>
 
 <div>
-  <%= link_to "Edit this fornecedor", edit_fornecedor_path(@fornecedor) %> |
-  <%= link_to "Back to fornecedors", fornecedors_path %>
+  <%= link_to "Editar", edit_fornecedor_path(@fornecedor) %> |
+  <%= link_to "voltar", fornecedors_path %>
 
-  <%= button_to "Destroy this fornecedor", @fornecedor, method: :delete %>
+  <%= button_to "Deletar", @fornecedor, method: :delete, data: { confirm: "Tem certeza que deseja deletar este fornecedor?" } %>
+
 </div>
