@@ -3,8 +3,9 @@
 <%= render @autor %>
 
 <div>
-  <%= link_to "Edit this autor", edit_autor_path(@autor) %> |
-  <%= link_to "Back to autors", autors_path %>
+  <%= link_to "Editar", edit_autor_path(@autor) %> |
+  <%= link_to "Voltar", autors_path %>
 
-  <%= button_to "Destroy this autor", @autor, method: :delete %>
+  <%= button_to "Deletar", @autor, method: :delete, data: { turbo_confirm: "Tem certeza que deseja deletar este autor?" } %>
+
 </div>
