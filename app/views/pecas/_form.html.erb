@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :fornecedor_id, style: "display: block" %>
-    <%= form.text_field :fornecedor_id %>
+    <%= form.collection_select :fornecedor_id, Fornecedor.all, :conta, :nome, prompt: "Selecione um fornecedor"  %>
   </div>
 
   <div>

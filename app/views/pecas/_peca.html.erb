@@ -9,9 +9,12 @@
     <%= peca.valor %>
   </p>
 
-  <p>
+  <div>
     <strong>Fornecedor:</strong>
-    <%= peca.fornecedor_id %>
-  </p>
+    <p>ID: <%= peca.fornecedor.id %></p>
+    <p>Nome: <%= peca.fornecedor.nome %> </p>
+    <p>Conta <%= peca.fornecedor.conta %></p>
+    <p>CNPJ: <%= peca.fornecedor.cnpj %></p>
+  </div>
 
 </div>

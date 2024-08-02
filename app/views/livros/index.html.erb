@@ -6,9 +6,9 @@
   <% @livros.each do |livro| %>
     <%= render livro %>
     <p>
-      <%= link_to "Show this livro", livro %>
+      <%= link_to "Detalhes", livro %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New livro", new_livro_path %>
+<%= link_to "Criar livro", new_livro_path %>

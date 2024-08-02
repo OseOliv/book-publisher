@@ -3,8 +3,9 @@
 <%= render @livro %>
 
 <div>
-  <%= link_to "Edit this livro", edit_livro_path(@livro) %> |
-  <%= link_to "Back to livros", livros_path %>
+  <%= link_to "Editar", edit_livro_path(@livro) %> |
+  <%= link_to "Voltar", livros_path %>
 
-  <%= button_to "Destroy this livro", @livro, method: :delete %>
+  <%= button_to "Deletar", @livro, method: :delete, data: { turbo_confirm: "Você tem certeza de que deseja deletar este livro?" } %>
+
 </div>
