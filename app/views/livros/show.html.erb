@@ -6,5 +6,6 @@
   <%= link_to "Editar", edit_livro_path(@livro) %> |
   <%= link_to "Voltar", livros_path %>
 
-  <%= button_to "Deletar", @livro, method: :delete %>
+  <%= button_to "Deletar", @livro, method: :delete, data: { turbo_confirm: "Você tem certeza de que deseja deletar este livro?" } %>
+
 </div>
